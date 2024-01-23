@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header" class="navbar navbar-fixed-top bg-primary-900 text-primary-400 h-16">
+      <nav id="topbar" class="flex flex-row items-center h-full">
+        <img class="logo h-8 ms-6" src="https://st2.zoom.us/static/6.3.17955/image/new/topNav/Zoom_logo.svg">
+        <div class="navigation flex flex-row justify-evenly items-center w-3/4">
+          <div>Products</div>
+          <div>Solutions</div>
+          <div>Resources</div>
+          <div>Search</div>
+          <div>Support</div>
+          <div>Request a demo</div>
+        </div>
+        <div class="list-inline flex flex-row justify-evenly items-center w-1/4">
+          <div role="none">
+            <span style="border-left: 1px solid;"></span>
+          </div>
+          <div class="link">Join</div>
+          <div class="none">
+            <div id="dropdown-hostmeeting" class="dropdown"></div>
+          </div>
+          <div role="link">Sign in</div>
+        </ul>
+      </nav>
+    </div>
+    <div id="hero" class="bg-primary-800 text-primary-200 flex flex-row w-full p-10">
+      <div id="main-lockup" class="basis-1/2 flex flex-col justify-items-center p-16 max-w-prose">
+        <p class="text-6xl/tight font-bold text-primary-200 p-5">AI that makes you more collaborative</p>
+        <p class="text-lg/6 p-5">Zoom AI Companion is your trusted digital assistant that empowers you. Included at no additional cost with your paid Zoom user account.</p>
+        <div class="p-5">
+          <button id="plansAndPricing" class="bg-secondary-600 text-primary-200 h-10 w-36 p">Plans and Pricing</button>
+        </div>
+      </div>
+      <div class="basis-1/2 mx-auto">
+        <div class="md:flex">
+          <div class="md:shrink-0">
+            <img class="h-92 w-1/4 p-16" src="screen.jpg"></img>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="products" class="bg-primary-700 text-primary-200 flex flex-row place-content-evenly w-full">
+      <div id="pr1" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center flex flex-col items-center hover:scale-110">
+        <p class="w-40 font-display text-lg font-bold border-b-2 text-center text-primary-200">Zoom One</p>
+        <img class="pt-2 p-4" src="lady.jpg">
+        <p class="font-body text-sm font-semibold px-4 pb-4 text-primary-300">Unified communication and collaboration platform</p>
+        <p class="font-body text-xs pb-2 px-4 leading-relaxed text-primary-400">Make meaningful connections with meetings, team chat, whiteboard, phone, and more in one offering.</p>
+        <button class="font-body text-sm border p-2 border-secondary-300 hover:text-secondary-300">Learn more</button>
+      </div>
+      <div id="pr2" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center">
+        <p>Spaces</p>
+        <img class="pt-2 p-4" src="lady.jpg">
+        <p>Workspaces reimagined</p>
+        <p>Innovative room solutions for every meeting space.</p>
+      </div>
+      <div id="pr3" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center">
+        <p>Zoom Events</p>
+        <img class="pt-2 p-4" src="lady.jpg">
+        <p>Elevated experiences</p>
+        <p>Solutions to host impactful virtual and hybrid experiences.</p>
+      </div>
+      <div id="pr4" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center">
+        <p>Zoom Contact Center</p>
+        <img class="pt-2 p-4" src="lady.jpg">
+        <p>Modern customer support</p>
+        <p>An omnichannel cloud contact center solution optimized for video.</p>
+      </div>
+      <div id="pr5" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center">
+        <p>Zoom Developers</p>
+        <img class="pt-2 p-4" src="lady.jpg">
+        <p>Zoom for builders</p>
+        <p>Create innovative apps and integrations using Zoom's platform</p>
+      </div>
+
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
