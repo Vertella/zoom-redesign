@@ -6,91 +6,102 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header" class="navbar navbar-fixed-top bg-primary-900 text-primary-400 h-16">
-      <nav id="topbar" class="flex flex-row items-center h-full">
-        <img class="logo h-8 ms-6" src="https://st2.zoom.us/static/6.3.17955/image/new/topNav/Zoom_logo.svg">
-        <div class="navigation flex flex-row justify-evenly items-center w-3/4">
-          <div>Products</div>
-          <div>Solutions</div>
-          <div>Resources</div>
-          <div>Search</div>
-          <div>Support</div>
-          <div>Request a demo</div>
+    <!-- Navigation bar -->
+    <nav id="navigation" class=" bg-primary-900 text-primary-400 h-16">
+      <div class="flex flex-row justify-between items-center h-full md:w-full">
+        <img id="zoom-logo" class="logo h-6 ms-4 sm:h-8 sm:ms-6" src="https://st2.zoom.us/static/6.3.17955/image/new/topNav/Zoom_logo.svg">
+        <div id="menu-toggle" class="block lg:hidden">
+          <button id="hamburgerButton" class="focus:outline-none mr-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
-        <div class="list-inline flex flex-row justify-evenly items-center w-1/4">
-          <div role="none">
-            <span style="border-left: 1px solid;"></span>
-          </div>
-          <div class="link">Join</div>
-          <div class="none">
-            <div id="dropdown-hostmeeting" class="dropdown"></div>
-          </div>
-          <div role="link">Sign in</div>
+        <!-- Navigation Links -->
+        <ul id="navigationLinks" class="hidden md:flex absolute right-1 md:ml-1 md:justify-around md:w-4/5 top-12 lg:top-0 bg-primary-900 md:bg-transparent text-primary-400 font-body md:text-2xl decoration p-2 py-2 px-2 shadow md:shadow-none mt-1">
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Products</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Solutions</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Resources</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Search</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Support</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Demo</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Join</li>
+          <li class="px-3 hover:font-bold hover:cursor-pointer">Sign in</li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
+    
+    <script>
+      const hamburgerButton = document.getElementById('hamburgerButton');
+      const navigationLinks = document.getElementById('navigationLinks');
+
+      hamburgerButton.addEventListener('click', () => {
+        navigationLinks.classList.toggle('hidden');
+      });
+    </script>
+
+    <!-- Hero section -->
     <div id="hero" class="bg-primary-800 text-primary-200 flex flex-col sm:flex-row w-full sm:p-10">
-      <div id="main-lockup" class="flex flex-col justify-items-center p-5 sm:p-16 max-w-prose sm:basis-1/2">
-        <p class="text-3xl sm:text-6xl/tight font-bold text-primary-200 p-2 sm:p-5">AI that makes you more collaborative</p>
-        <p class="text-base sm:text-lg/6 p-2 sm:p-5">Zoom AI Companion is your trusted digital assistant that empowers you. Included at no additional cost with your paid Zoom user account.</p>
+      <div id="main-lockup" class="flex flex-col justify-items-center p-5 sm:p-16 sm:basis-1/3 font-body">
+        <h1 class="text-3xl sm:text-6xl/tight lg:text-8xl font-bold text-primary-200 p-2 sm:p-5">AI that makes you more collaborative</h1>
+        <p class="text-base sm:text-lg/6 lg:text-3xl p-2 sm:p-5">Zoom AI Companion is your trusted digital assistant that empowers you. Included at no additional cost with your paid Zoom user account.</p>
         <div class="mx-auto sm:hidden">
           <div class="md:flex">
-            <img class="h-60 sm:h-92 w-full sm:w-30 p-5 sm:p-16" src="screen.jpg" alt="Screen Image">
+            <img class="h-60 w-full sm:h-92 p-5" src="screen.jpg" alt="Screen Image">
           </div>
         </div>
         <div class="p-2 sm:p-5">
-          <button id="plansAndPricing" class="bg-secondary-600 text-primary-200 h-10 w-full sm:w-36 p">Plans and Pricing</button>
+          <button id="plansAndPricing" class="bg-secondary-600 text-primary-200 h-10 w-full text-base lg:text-4xl sm:w-36 lg:h-20 lg:w-80">Plans and Pricing</button>
         </div>
       </div>
-
+      <!-- Hero image -->
       <div class="mx-auto sm:flex hidden sm:basis-1/2">
         <div class="md:flex">
-          <img class="h-60 sm:h-92 w-full sm:w-30 p-5 sm:p-16" src="screen.jpg" alt="Screen Image">
+          <img class="sm:h-92 w-full sm:w-30 p-5 sm:p-16" src="screen.jpg" alt="Screen Image">
         </div>
       </div>
     </div>
-    </div>
-
-    <div id="products" class="bg-primary-700 text-primary-200 flex flex-col sm:flex-row place-content-evenly w-full">
+    <!-- PRODUCTS -->
+    <div id="products" class="bg-primary-700 text-primary-200 flex flex-col sm:flex-row place-content-evenly w-full font-body">
       <!-- Product 1 -->
       <div id="pr1" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center flex flex-col items-center sm:hover:scale-110">
-        <p class="w-40 font-display text-lg font-bold border-b-2 text-center text-primary-200">Zoom One</p>
+        <h2 class="w-40 font-display text-lg lg:text-3xl font-bold border-b-2 text-center text-primary-200">Zoom One</h2>
         <img class="pt-2 p-4" src="lady.jpg">
-        <p class="font-body text-sm font-semibold px-4 pb-4 text-primary-300">Unified communication and collaboration platform</p>
-        <p class="font-body text-xs pb-2 px-4 leading-relaxed text-primary-400">Make meaningful connections with meetings, team chat, whiteboard, phone, and more in one offering.</p>
-        <button class="font-body text-sm border p-2 border-secondary-300 hover:text-secondary-300">Learn more</button>
+        <p class="text-sm lg:text-2xl font-semibold px-4 pb-4 text-primary-300">Unified communication and collaboration platform</p>
+        <p class="font-body text-xs lg:text-lg pb-2 px-4 leading-relaxed text-primary-400 lg:w-4/5">Make meaningful connections with meetings, team chat, whiteboard, phone, and more in one offering.</p>
+        <button class="font-body text-sm lg:text-lg border p-2 lg:mb-4 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
       </div>
       <!-- Product 2 -->
       <div id="pr2" class="basis-1/5 min-w-24 max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center flex flex-col items-center sm:hover:scale-110">
-        <p class="w-40 font-display text-lg font-bold border-b-2 text-center text-primary-200">Spaces</p>
+        <h2 class="w-40 font-display text-lg lg:text-3xl font-bold border-b-2 text-center text-primary-200">Spaces</h2>
         <img class="pt-2 p-4" src="lady.jpg">
-        <p class="font-body text-sm font-semibold px-4 pb-4 text-primary-300">Workspaces reimagined</p>
-        <p class="font-body text-xs pb-2 px-4 leading-relaxed text-primary-400">Innovative room solutions for every meeting space.</p>
-        <button class="font-body text-sm border p-2 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
+        <p class="text-sm lg:text-2xl font-semibold px-4 pb-4 text-primary-300">Workspaces reimagined</p>
+        <p class="font-body text-xs lg:text-lg pb-2 px-4 leading-relaxed text-primary-400 lg:w-4/5">Innovative room solutions for every meeting space.</p>
+        <button class="font-body text-sm lg:text-lg border p-2 lg:mb-4 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
       </div>
       <!-- Product 3 -->
       <div id="pr3" class="hidden sm:basis-1/5 sm:min-w-24 sm:max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center sm:flex flex-col items-center hover:scale-110">
-        <p class="w-40 font-display text-lg font-bold border-b-2 text-center text-primary-200">Zoom Events</p>
+        <h2 class="w-40 lg:w-52 font-display text-lg lg:text-3xl font-bold border-b-2 text-center text-primary-200">Zoom Events</h2>
         <img class="pt-2 p-4" src="lady.jpg">
-        <p class="font-body text-sm font-semibold px-4 pb-4 text-primary-300">Elevated experiences</p>
-        <p class="font-body text-xs pb-2 px-4 leading-relaxed text-primary-400">Solutions to host impactful virtual and hybrid experiences.</p>
-        <button class="font-body text-sm border p-2 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
+        <p class="text-sm lg:text-2xl font-semibold px-4 pb-4 text-primary-300">Elevated experiences</p>
+        <p class="font-body text-xs lg:text-lg pb-2 px-4 leading-relaxed text-primary-400 lg:w-4/5">Solutions to host impactful virtual and hybrid experiences.</p>
+        <button class="font-body text-sm lg:text-lg border p-2 lg:mb-4 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
       </div>
       <!-- Product 4 -->
       <div id="pr4" class="hidden sm:basis-1/5 sm:min-w-24 sm:max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center sm:flex flex-col items-center hover:scale-110">
-        <p class="w-52 font-display text-lg font-bold border-b-2 text-center text-primary-200">Zoom Contact Center</p>
+        <h2 class="w-40 lg:w-96 font-display text-lg lg:text-3xl font-bold border-b-2 text-center text-primary-200">Zoom Contact Center</h2>
         <img class="pt-2 p-4" src="lady.jpg">
-        <p class="font-body text-sm font-semibold px-4 pb-4 text-primary-300">Modern customer support</p>
-        <p class="font-body text-xs pb-2 px-4 leading-relaxed text-primary-400">An omnichannel cloud contact center solution optimized for video.</p>
-        <button class="font-body text-sm border p-2 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
+        <p class="text-sm lg:text-2xl font-semibold px-4 pb-4 text-primary-300">Modern customer support</p>
+        <p class="font-body text-xs lg:text-lg pb-2 px-4 leading-relaxed text-primary-400 lg:w-4/5">An omnichannel cloud contact center solution optimized for video.</p>
+        <button class="font-body text-sm lg:text-lg border p-2 lg:mb-4 border-secondary-300 hover:text-secondary-300 mt-auto">Learn more</button>
       </div>
       <!-- Product 5 -->
       <div id="pr5" class="hidden sm:basis-1/5 sm:min-w-24 sm:max-w-screen-sm h-100 my-6 mx-4 p-2 bg-primary-800 border-2 border-primary-500 text-center sm:flex flex-col items-center hover:scale-110">
-        <p class="w-52 font-display text-lg font-bold border-b-2 text-center text-primary-200">Zoom Developers</p>
+        <h2 class="w-40 lg:w-72 font-display text-lg lg:text-3xl font-bold border-b-2 text-center text-primary-200">Zoom Developers</h2>
         <img class="pt-2 p-4" src="lady.jpg">
-        <p class="font-body text-sm font-semibold px-4 pb-4 text-primary-300">Zoom for builders</p>
-        <p class="font-body text-xs pb-2 px-4 leading-relaxed text-primary-400">Create innovative apps and integrations using Zoom's platform.</p>
-        <button class="font-body text-sm border p-2 border-secondary-300 flex mt-auto hover:text-secondary-300">Learn more</button>
+        <p class="text-sm lg:text-2xl font-semibold px-4 pb-4 text-primary-300">Zoom for builders</p>
+        <p class="font-body text-xs lg:text-lg pb-2 px-4 leading-relaxed text-primary-400 lg:w-4/5">Create innovative apps and integrations using Zoom's platform.</p>
+        <button class="font-body text-sm lg:text-lg border p-2 lg:mb-4 border-secondary-300 flex mt-auto hover:text-secondary-300">Learn more</button>
       </div>
     </div>
 
@@ -98,35 +109,35 @@
     <div id="zoom-stars" class="bg-primary-800 text-primary-200 font-body flex flex-col sm:grid sm:grid-cols-6 sm:grid-rows-4 sm:gap-4 sm:w-full">
       <!-- About Gartner-->
       <div id="about-gartner" class="sm:col-span-2 sm:row-span-2 sm:col-start-3 sm:self-end w-full">
-        <p class="w-80 sm:w-96 indent-2 sm:indent-0 text-lg italic sm:leading-relaxed text-center text-wrap m-6 sm:m-10 text-primary-400">
+        <p class="w-80 sm:w-96 lg:w-full indent-2 sm:indent-0 text-lg lg:text-5xl italic sm:leading-relaxed text-center text-wrap m-6 sm:m-10 text-primary-400">
           For the 
-          <a class="text-primary-200">fourth time in a row,</a>
-          <a class="text-secondary-400 text-3xl sm:text-5xl font-bold">Zoom</a> 
+          <a class="text-primary-200 lg:font-bold">fourth time in a row,</a>
+          <a class="text-secondary-400 text-3xl sm:text-5xl lg:text-8xl font-bold">Zoom</a> 
           is named a <a class="font-bold">Leader</a> in the 
           <a class="text-primary-200 underline decoration-secondary-300">2023 Gartner Magic Quadrant</a> 
           for 
-          <a class="text-primary-200 text-xl sm:text-2xl font-bold">unified communications</a>
+          <a class="text-primary-200 text-xl sm:text-2xl lg:text-6xl font-bold">unified communications</a>
           as a service (UCaaS), Worldwide.
         </p>
       </div>
       <!-- Graph -->
-      <div class="sm:col-span-2 sm:row-span-4 sm:place-self-center flex flex-col justify-center items-center">
-        <p class="text-primary-200 font-body text-base sm:text-sm font-bold text-center">2023 Gartner® Magic Quadrant</p>
-        <div class="h-72 w-72 sm:h-96 sm:w-96 sm:m-4 border p-1 sm:p-4 border-secondary-300 overflow-hidden relative">
+      <div class="sm:col-span-2 sm:row-span-4 sm:place-self-center flex flex-col justify-center items-center lg:scale-150 lg:m-auto lg:mb-32">
+        <p class="text-primary-200 font-body text-base sm:text-sm lg:text-2xl font-bold text-center">2023 Gartner® Magic Quadrant</p>
+        <div class="h-72 w-72 sm:h-96 sm:w-96  sm:m-4 border p-1 sm:p-4 border-secondary-300 overflow-hidden relative">
           <img class="absolute top-0 right-0 h-full w-full object-cover" src="graph.png">
         </div>
       </div>
 
       <!-- Arrow pointing to graph -->
-      <div class="hidden sm:block">
-        <div class="sm:row-span-2 sm:col-start-3 sm:row-start-3 self-start -mt-6 -ml-12">
+      <div class="hidden sm:block sm:col-start-3 sm:row-start-3 sm:self-start lg:self-center lg:scale-125 lg:ml-12">
+        <div class="sm:col-start-3 row-start-3 self-start -mt-6 lg:-mt-0 -ml-12 ">
           <img src="curved-right-a.svg">
         </div>
     </div>
       <!-- Star rating -->
-      <div id="star-rating" class="col-span-2 row-span-2 col-start-4 row-start-3 place-self-start justify-center">
-        <h2 class="text-6xl/tight font-bold text-primary-200 p-5 text-center">4.5<a class="text-4xl">/5</a></h2>
-        <div id="stars" class="flex flex-row h-12 sm:h-36">
+      <div id="star-rating" class="sm:col-span-2 sm:row-span-2 sm:col-start-4 sm:row-start-3 sm:place-self-start justify-center w-full">
+        <h2 class="text-6xl/tight lg:text-8xl font-bold text-primary-200 p-5 text-center">4.5<a class="text-4xl">/5</a></h2>
+        <div id="stars" class="flex flex-row justify-center h-14 sm:h-36">
           <img src="star-sharp-svgrepo-com.svg">
           <img src="star-sharp-svgrepo-com.svg">
           <img src="star-sharp-svgrepo-com.svg">
@@ -139,32 +150,32 @@
         </div>
         
       </div>
-
-      <div id="trust-radius-col" class="row-span-4 col-start-6 row-start-1 m-4 mb-6 place-self-center justify-center">
-        <div id="trustradius" class="text-sm m-5 text-center">
-          <img src="TopRated-Gradient-2023.png">
+      <!-- Trust Radius Panel -->
+      <div id="trust-radius-col" class="row-span-4 col-start-6 row-start-1 m-4 mb-6 place-self-center place-content-center justify-center lg:h-full lg:w-full">
+        <div id="trustradius" class="text-sm lg:text-4xl m-5 text-center place-self-center">
+          <img class="lg:w-52 lg:m-auto" src="TopRated-Gradient-2023.png">
           <p class="font-bold">Trust Radius</p>
-          <p class="text-xs">2023 Top Rated Vendor</p>
+          <p class="text-xs lg:text-base">2023 Top Rated Vendor</p>
         </div>
-        <div id="review-window" class="">
-          <p class="font-body text-sm text-primary-200 font-bold mb-2 text-center">READ OUR REVIEWS</p>
-          <div id="reviews" class="flex flex-col h-60 w-44 text-primary-200 border p-2 border-secondary-300">
+        <div id="review-window" class="lg:m-auto">
+          <p class="font-body text-sm lg:text-2xl text-primary-200 font-bold mb-2 text-center">READ OUR REVIEWS</p>
+          <div id="reviews" class="flex flex-col h-60 lg:h-96 w-44 lg:w-72 text-primary-200 border p-2 border-secondary-300 lg:m-auto">
             
             <div id="rv1">
-              <p class="font-body text-xs font-bold mb-1">Zoom is crap</p>
-              <p class="font-body text-xs text-justify line-clamp-6">Zoom is terrible application. It uses way too much RAM so if you have less than 16GB RAM, your computer will freeze when trying to use Zoom. The desktop Zoom client constantly crashes, Zoom tech support is inept high-school kids, and the pricing is not worth the deliverables. Our organization will be switching to Teams. Don't waste your company's money on Zoom or your time with Zoom support. All they do is regurgitate stuff from their community and knowledge base. They don't actually know anything.</p>
+              <p class="font-body text-xs lg:text-2xl font-bold mb-1">Zoom is crap</p>
+              <p class="font-body text-xs lg:text-lg text-justify line-clamp-6">Zoom is terrible application. It uses way too much RAM so if you have less than 16GB RAM, your computer will freeze when trying to use Zoom. The desktop Zoom client constantly crashes, Zoom tech support is inept high-school kids, and the pricing is not worth the deliverables. Our organization will be switching to Teams. Don't waste your company's money on Zoom or your time with Zoom support. All they do is regurgitate stuff from their community and knowledge base. They don't actually know anything.</p>
             </div>
             <div id="acc-info" class="flex flex-row mt-5">
               <div class="Byline_obj__qHpib"><div class="avatar_avatar__H_C_h avatar_medium__mjiEW avatar_no-shadow__N0K6J"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div></div>
-              <div id="acc-text" class="font-body text-xs flex flex-col">
+              <div id="acc-text" class="font-body text-xs lg:text-xl flex flex-col">
                 <p id="rv-acc" class="font-bold">Verified User</p>
                 <p id="acc-about" class="">Administrator</p>
               </div>
             </div>
             
             <div id="button-rv" class="flex justify-evenly mt-4">
-              <button class=""><img class="w-8" src="chevron-left.svg"></button>
-              <button class=""><img class="w-8" src="chevron-right.svg"></button>
+              <button class=""><img class="w-8 lg:w-16" src="chevron-left.svg"></button>
+              <button class=""><img class="w-8 lg:w-16" src="chevron-right.svg"></button>
             </div>
           </div>
         </div>
